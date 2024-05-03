@@ -12,8 +12,6 @@ terraform {
 provider "aws" {
   region  = "us-west-1" #The region where the environment 
   #is going to be deployed # Use your own region here
-  access_key = "AKIARHRYQNSELAQ6RNRE" # Enter AWS IAM 
-  secret_key = "bCRiDYVUWI5hnth/CyioBMGBXW/duK1mG1hta/pm" # Enter AWS IAM 
 }
 
 resource "aws_ecr_repository" "app_repo" {
