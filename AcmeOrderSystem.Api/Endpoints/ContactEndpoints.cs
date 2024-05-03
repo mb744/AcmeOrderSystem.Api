@@ -61,11 +61,11 @@ public static class ContactEndpoints
             UpdateContactRequest request,
             IContactService contactService) =>
         {
-            var deleted = await contactService.UpdateContact(id, request);
+            var updated = await contactService.UpdateContact(id, request);
 
-            if (deleted is null) return Results.NotFound();
+            if (updated is null) return Results.NotFound();
 
-            return Results.NoContent();
+            return Results.Ok(updated);
         }).WithTags("Contacts");
     }
 }

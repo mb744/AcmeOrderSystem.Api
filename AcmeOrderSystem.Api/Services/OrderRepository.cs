@@ -97,9 +97,7 @@ namespace AcmeOrderSystem.Api.Services
         {
             try
             {
-                var order = await _context.Orders.FindAsync(id);
-                if (order is null)
-                    return null;
+                var order = new Order();
 
                 order.Id = id;
                 order.CustomerId = updateOrder.CustomerId;

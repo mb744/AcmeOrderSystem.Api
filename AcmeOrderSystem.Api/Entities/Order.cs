@@ -16,7 +16,7 @@ namespace AcmeOrderSystem.Api.Entities
             CustomerId = customerId;
         }
 
-        private Order()
+        public Order()
         {
         }
 

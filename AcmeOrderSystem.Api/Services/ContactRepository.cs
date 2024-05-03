@@ -80,14 +80,17 @@ namespace AcmeOrderSystem.Api.Services
             
             try
             {
-                 var contact = await _context.Contacts
-                        .AsNoTracking()
-                        .FirstOrDefaultAsync(c => c.Id == id);
                 
+                var contact = await _context.Contacts
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(c => c.Id == id);
+
                 if (contact is null)
                     return null;
 
                 return contact;
+               
+                
             }
             catch (Exception ex)
             {
@@ -102,9 +105,6 @@ namespace AcmeOrderSystem.Api.Services
 
             try
             {
-                var getContact = await _context.Contacts.AsNoTracking().Where(w => w.Id == contact.Id).FirstOrDefaultAsync();
-
-                if (getContact == null) {return null; };
 
                 var updatedContact = new Contact(contact.Id, contact.Email, contact.Phone, contact.CustomerId, DateTime.UtcNow);
 

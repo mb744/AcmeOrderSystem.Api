@@ -48,7 +48,7 @@ namespace AcmeOrderSystem.Api.Services
                 if (gettConatct == null) { return null; }
 
 
-                var updateContact = new Contact(contact.Id, contact.Email, contact.Phone, contact.CustomerId, DateTime.UtcNow);
+                var updateContact = new Contact(id, contact.Email, contact.Phone, contact.CustomerId, DateTime.UtcNow);
 
                 var updatedContact = await _contactRepository.UpdateContact(updateContact);
 

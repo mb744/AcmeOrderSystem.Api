@@ -67,7 +67,7 @@ builder.Services.AddAuthentication(options =>
 
 
 builder.Services.AddDbContext<ApplicationDbContext>(
-    options => options.UseNpgsql(builder.Configuration.GetConnectionString("Database")));
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("Database")), ServiceLifetime.Transient);
 
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IContactRepository, ContactRepository>();

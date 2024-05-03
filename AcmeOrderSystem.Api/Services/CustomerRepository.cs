@@ -119,9 +119,7 @@ namespace AcmeOrderSystem.Api.Services
 
         public async Task<Customer?> UpdateCustomer(int id, Customer updateCustomer)
         {
-            var customer = await _context.Customers.FindAsync(id);
-            if (customer is null)
-                return null;
+            
 
             customer.Name = updateCustomer.Name;
             customer.City = (updateCustomer.City) ?? customer.City;
